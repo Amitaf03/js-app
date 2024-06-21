@@ -42,6 +42,7 @@ mongoose.connect(process.env.MONGODB_URL, { })
         console.log('MongoDB connected...');
         await mongoose.connection.db.dropDatabase();
         KPI.insertMany(kpis);
+        Product.insertMany(products);
     })
     .catch(err => console.log('MongoDB connection error:', err));
 
